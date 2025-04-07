@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Neutral colors */
+    --neutral-clr-900: hsl(227, 75%, 14%);
+    --neutral-clr-800: hsl(226, 25%, 17%);
+    --neutral-clr-700: hsl(225, 23%, 24%);
+    --neutral-clr-600: hsl(226, 11%, 37%);
+    --neutral-clr-300: hsl(0, 0%, 78%);
+    --neutral-clr-200: hsl(217, 61%, 90%);
+    --neutral-clr-100: hsl(0, 0%, 93%);
+    --neutral-clr-0: hsl(200, 60%, 99%);
+
+    /* Red colors */
+    --red-clr-400: hsl(3, 86%, 64%);
+    --red-clr-500: hsl(3, 71%, 56%);
+    --red-clr-700: hsl(3, 77%, 44%);
+
+    /* Gradient colors */
+    --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%); 
+
+    /* Font weights */
+    --fw-semibold: 400;
+    --fw-bold: 500;
+    --fw-extrabold: 700;
+
+    /* Font */
+    --font-body: "Noto Sans", sans-serif;
+    --font-size-base: 1rem; /* 16px */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    font: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
+body {
+    background-image: var(--light-gradient);
+    background-repeat: no-repeat;
+    font-family: var(--font-body);
+    min-height: 100vh;
+}
+
+/* header, .logo-theme, main, .extensions-filter, .extensions-list, .extension {
+    border: 0.1rem solid var(--neutral-clr-700);
+} */
+
+header, main{
+    /* padding: 2.5rem 8.5rem 0; */
+    padding-top: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
+    padding-inline: clamp(1rem, -1.6408rem + 11.2676vw, 8.5rem);
+}
+
+main {
+    display: grid;
+    gap: 2rem;
+}
+
+.logo-theme {
+    background-color: var(--neutral-clr-0);
+    padding: 0.5rem;
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-theme {
+    border-radius: 0.5rem;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+}
+
+.toggle-theme img:last-child {
+    display: none;
+}
+
+.extensions-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
+
+.extensions-filter h2 {
+    font-weight: var(--fw-extrabold);
+    font-size: 1.5rem;
+    color: var(--neutral-clr-800);
+}
+
+.filter-options {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.option {
+    background-color: var(--neutral-clr-0);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    color: var(--neutral-clr-800);
+}
+
+.option.active {
+    background-color: var(--red-clr-700);
+    color: var(--neutral-clr-0);
+}
+
+.extensions-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-auto-rows: 1fr;
+    gap: 0.75rem;
+}
+
+.extension {
+    background-color: var(--neutral-clr-0);
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--neutral-clr-200);
+
+    display: grid;
+    gap: 3rem;
+}
+
+.extension-info {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+
+.extension-info h3 {
+    font-weight: var(--fw-extrabold);
+    font-size: 1.25rem;
+    color: var(--neutral-clr-800);
+    margin-bottom: 0.5rem;
+}
+
+.extension-info p {
+    color: var(--neutral-clr-600);
+    font-weight: var(--fw-bold);
+}
+
+.extension-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-btn {
+    background-color: transparent;
+    border: 1px solid var(--neutral-clr-300);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    color: var(--neutral-clr-900);
+    font-weight: var(--fw-bold);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.switch-btn {
+    height: 21px;
+    width: 37px;
+
+    background-color: var(--neutral-clr-300);
+    border-radius: 5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.switch-btn::before {
+    background-color: var(--neutral-clr-0);
+    content: "";
+    position: absolute;
+    height: 1.063rem;
+    width: 1.063rem;
+    border-radius: 50%;
+    top: 50%;
+    left: 0.125rem;
+    transform: translateY(-50%);
+}
+
+input[type="checkbox"]:checked ~ .switch-btn {
+    background-color: var(--red-clr-700);
+}
+
+input[type="checkbox"]:checked ~ .switch-btn::before {
+    left: 18px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <title>Browser extensions manager UI</title>
+
+</head>
+<body>
+
+    <header>
+
+        <section class="logo-theme">
+            <img src="./assets/images/logo.svg" alt="logo">
+            <button type="button" class="toggle-theme">
+                <img src="./assets/images/icon-moon.svg" alt="moon-icon">
+                <img src="./assets/images/icon-sun.svg"  alt="sun-icon">
+            </button>
+        </section>
+
+    </header>
+
+    <main>
+
+        <section class="extensions-filter">
+            <h2>Extensions List</h2>
+            <span class="filter-options">
+                <button type="button" class="option active">All</button>
+                <button type="button" class="option">Active</button>
+                <button type="button" class="option">Inactive</button>
+            </span>
+        </section>
+
+        <section>
+            <ul class="extensions-list"></ul>
+        </section>
+
+    </main>
+
+</body>
+</html>
