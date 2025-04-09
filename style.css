@@ -50,6 +50,7 @@ body {
     background-image: var(--light-gradient);
     background-repeat: no-repeat;
     font-family: var(--font-body);
+    font-size: var(--font-size-base);
     min-height: 100vh;
 }
 
@@ -120,11 +121,13 @@ main {
 
 .option {
     background-color: var(--neutral-clr-0);
+    color: var(--neutral-clr-700);
+    padding: 0.5rem 1.5rem;
     border: none;
     border-radius: 2rem;
     cursor: pointer;
-    padding: 0.5rem 1.5rem;
-    color: var(--neutral-clr-800);
+    outline: 1px solid var(--neutral-clr-300);
+    font-weight: var(--fw-bold);
 }
 
 .option.active {
